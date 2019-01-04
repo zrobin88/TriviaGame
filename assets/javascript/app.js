@@ -2,43 +2,34 @@
 const quizQuestions = [
   {
     question: "What year did Metallica relase their first album?",
-    answers: {
+    answers: [{
       a: "1976",
       b: "1988",
       c: "1983",
       d: "1991"
-    },
+    }],
     correctAnswer: "c"
   },
-  {
-    question: "Who is the Japanse version of Superman",
-    answers: {
-      a: "Vegta",
-      b: "Goku",
-      c: "Naruto",
-      d: "Super Mario"
-    },
-    correctAnswer: "b"
-  },
+
   {
     question: "What iconic Gibson guitar was named after a famous guitarist?",
-    answers: {
+    answers: [{
       a: "Les Paul",
       b: "Randy Rhoads",
       c: "Eric Clapton",
       d: "Dimebag Darrell"
-    },
+    }],
     correctAnswer: "a"
   },
   {
     question: "What foreign company owns American automaker Chrysler?",
-    answers: {
+    answers: [{
       a: "Volkswagen",
       b: "Fiat",
       c: "Pugeot",
       d: "Toyota"
 
-    },
+    }],
     correctAnswer: "b"
   }
 
