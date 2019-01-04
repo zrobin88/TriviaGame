@@ -43,25 +43,34 @@ const quizQuestions = [
   }
 
 ];
-const quizContainer = document.getElementById('quiz');
+
 const resultsContainer = document.getElementById('results');
-
-
+const userAnswer = []; 
+const quizContainer = $("#quiz"); 
 var timer = 50;
 //variable that holds intervalID during run function
 var intervalId;
 
 
 //create a start button that starts the game and the timer
-$("start-btn").on("click", run);
+$("#start-btn").on("click", run);
 //create a done button that ends game and shows user score 
 $("#done").on("click", stop); 
 
-//create a run function that runs the clock 
+
+
+//create a run function that runs the clock (clear interval, set interval to intervalID var, use decrement function and 1 second as arguments)
 function run() {
   console.log("test");
   clearInterval(intervalId);
   intervalId = setInterval(decrement, 1000);
+  
+
+  //display quiz 
+  for(let i =0; i<quizQuestions.length; i++){
+    $("#quiz").append("<p>"+ quizQuestions[i].question + "</p>"); 
+    //$("#quiz").html("<p>"+ this.answers[i] + "</p>"); 
+  }
 }
 //decrement function 
 
@@ -76,8 +85,8 @@ function decrement() {
 
     //run the stop function.
     stop();
-    //  Alert the user that time is up.
-    alert("Time Up!");
+    alert("Time's Up!");
+    timer = 50; 
   }
 }
 
@@ -85,6 +94,8 @@ function decrement() {
 function stop (){
   clearInterval(intervalId); 
 }
+
+
 
 
 
@@ -96,3 +107,6 @@ function stop (){
 
 
 //display correct, incorrect and unanswered tallies when timer runs out or user clicks done
+
+
+
