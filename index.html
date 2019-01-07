@@ -1,32 +1,64 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.js"
-    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
 
-   
+
 </head>
-<body id = "body">
-    
-    <h1>Trivia Game</h1>
 
-    <div id ="timer"></div>
+<body id="body" class ="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class ="col-sm-1"></div>
+            <div class ="col-sm-10">
+                    <div class="jumbotron bg-warning mt-5" id = "jumbo">
+                            <h1 class="display-4">Trivia Game</h1>
+                            <div id="timer"></div>
+                            <hr class="my-4">
+                            <p>Answer all of the questions before the timer expires!</p>
+                            <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+                                    <button type="button" id = "start-btn" class="btn btn-success">Start</button>
+                                    <button type="button" id = "done" class="btn btn-danger">Done</button>
+                                    <button type="button" id = "reset-btn" class="btn btn-primary">Reset</button>
+                                  </div>
+                                  
+                          </div>
+                   
+                    
+            </div>
+            <div class ="col-sm-1"></div>
+           
+        </div>
+        <div class="row">
+            
+            <div class="col-sm-2"></div>
+            <div id = "quiz" class="col-sm-8 bg-warning"> </div>
+           
+            <div class="col-sm-2">
+                    
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-sm-2"></div>
+            <div id = "results" class = "col-sm-10">
+              
+            </div>
+            <div class = "col-sm-2"></div>
+        </div>
 
-    <button id="start-btn">Start</button>
-    
-    <div id = "quiz"> </div>
 
-    <button id="done">Done</button>
 
-    <div id = "results">Results</div>
-
+    </div>
     <script src="assets/javascript/app.js"></script>
 </body>
+
 </html>
