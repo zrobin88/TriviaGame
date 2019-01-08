@@ -232,7 +232,7 @@ function stop() {
   //bring back start button 
   $("#jumbo").append(startBtn);
   $(startBtn).on("click", run);
-
+  $("#done").remove();
 
 
   
