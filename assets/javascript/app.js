@@ -11,6 +11,16 @@ $("#reset-btn").on("click", function(){
 //declare variables
 const quizQuestions = [
   {
+    question: "What does CSS stand for?",
+    answers: [
+      "a: Cool Shoes Steve",
+      "b: Creative Style Selector ",
+      "c: Completely Soiled Sheets",
+      "d: Cascading Style Sheets "
+    ],
+    correctAnswer: "d: Cascading Style Sheets "
+  }, 
+  {
     question: "What year did Metallica relase their first album?",
     answers: [
       "a: 1976 ",
@@ -18,8 +28,19 @@ const quizQuestions = [
       "c: 1983 ",
       "d: 1991 "
     ],
-    correctAnswer: "c: 1983 "
+    correctAnswer:"c: 1983 "
   },
+
+  {
+    question: "What is Javascript?",
+    answers: [
+      "a: A movie about coffee",
+      "b: A markup language ",
+      "c: A type of progamming language ",
+      "d: The term for when one spills coffee on a script "
+    ],
+    correctAnswer: "c: A type of programming language "
+  }, 
 
   {
     question: "At what speed does the Earth rotate in one complete 24-hour cycle?",
@@ -37,7 +58,7 @@ const quizQuestions = [
     answers: [
       "a: Les Paul ",
       "b: Randy Rhoads ",
-      "c: Eric Clapton ",
+      "c: Meatloaf ",
       "d: Dimebag Darrell "
     ],
     correctAnswer: "a: Les Paul "
@@ -74,6 +95,20 @@ const quizQuestions = [
     ],
     correctAnswer: "c: Ozzy Osbourne "
   },
+
+
+  {
+    question: "In Britain, what do they call an apartment?",
+    answers: [
+      "a: A Bonnet ",
+      "b: A Saloon ",
+      "c: A Lift",
+      "d: A Flat "
+    ],
+    correctAnswer: "d: A Flat "
+  }, 
+
+
   {
     question: "In audio production, what is a compressor used for?",
     answers: [
@@ -86,6 +121,17 @@ const quizQuestions = [
   },
 
   {
+    question: "What was the name of the Titanic's sister-ship?",
+    answers: [
+      "a: HMS Brittanic ",
+      "b: USS Enterprise",
+      "c: HMS Beagle",
+      "d: USS Lucitania"
+    ],
+    correctAnswer: "a: HMS Brittanic "
+  }, 
+
+  {
     question: "Which entertainment company does Disney NOT own? ",
     answers: [
       "a: Lucasfilm ",
@@ -94,6 +140,26 @@ const quizQuestions = [
       "d: 21st Century Fox "
     ],
     correctAnswer: "c: Netflix "
+  }, 
+  {
+    question: "Which of these auto brands does Volkswagen Group NOT own ",
+    answers: [
+      "a: Lamborghini ",
+      "b: Mercedes Benz ",
+      "c: Audi",
+      "d: Porsche "
+    ],
+    correctAnswer: "b: Mercedes Benz "
+  }, 
+  {
+    question: "What does HTML stand for?",
+    answers: [
+      "a: Hyper Text Markup Language ",
+      "b: Hot Tomatoes Meets Lettuce ",
+      "c: Hyperbolic Time Machine Language",
+      "d: Heated Toast Makes Lunch "
+    ],
+    correctAnswer: "a: Hyper Text Markup Language "
   }, 
 
   
@@ -104,7 +170,7 @@ const quizQuestions = [
 const resultsContainer = document.getElementById('results');
 let rightAnswer = [];
 let wrongAnswer = []; 
-var timer = 50;
+var timer = 60;
 var startBtn = $("#start-btn")
 //variable that holds intervalID during run function
 var intervalId;
@@ -156,7 +222,7 @@ function decrement() {
     //run the stop function.
     stop();
     alert("Time's Up!");
-    timer = 50;
+    timer = 60;
   }
 }
 
@@ -178,19 +244,25 @@ function stop() {
       } else {
         wrongAnswer++;
       }
+      if(userInput !== quiz.children("input:checked")){
+        wrongAnswer ++; 
+      }
     }
     
-
+//display results
   const reslutsTemplate = `
-  <div class="card bg-secondary" style="width: 18rem;">
+  <div class="card bg-danger" style="width: 18rem;">
   <div class="card-body" id = "results">
     <h5 class="card-title"></h5>
     <h6 class="card-subtitle mb-2 text-muted"></h6>
   </div>
   
   `  
+
+  
   $("#results").append(reslutsTemplate+"<h2>"+ "Correct: "+ rightAnswer + "</h2>");
   $("#results").append(reslutsTemplate+"<h2>"+ "Incorrect: "+ wrongAnswer + "</h2>");
+  
 }
 
 

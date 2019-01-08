@@ -11,5 +11,17 @@
 #results{
  text-align: center;
  padding: 20px; 
+ border-radius: 10px;
+ color: white; 
 
+}
+
+.googleFont1{
+    font-family: 'Shrikhand', cursive;
+    color: black;
+}
+
+.googleFont2{
+    font-family: 'Alfa Slab One', cursive;
+    color: black; 
 }
